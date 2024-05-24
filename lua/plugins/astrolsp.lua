@@ -48,8 +48,6 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      -- pylsp = { plugins = { pycodestyle = { ignore = { "E501" } } } },
-      -- pylsp = { pycodestyle = { ignore = "E501" } },
     },
     -- customize how language servers are attached
     handlers = {

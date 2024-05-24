@@ -9,4 +9,5 @@ return {
   opts = {
     -- configurations go here
   },
+  enabled = false,
 }

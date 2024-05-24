@@ -50,8 +50,19 @@ return {
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        ["<C-j>"] = { "<cmd>:m .+1<cr>==", desc = "Move one line down" },
-        ["<C-k>"] = { "<cmd>:m .-2<cr>==", desc = "Move one line up" },
+        ["<C-j>"] = { ":m .+1<cr>", desc = "Move one line down" },
+        ["<C-k>"] = { ":m .-2<cr>", desc = "Move one line up" },
+
+        -- nvim-spectre keybindings:
+        ["<leader>s"] = { '<cmd>lua require("spectre").toggle()<CR>', desc = "Toggle Spectre" },
+        ["<leader>sw"] = {
+          '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+          desc = "Search current word",
+        },
+        ["<leader>sp"] = {
+          '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+          desc = "Search on current file",
+        },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bD"] = {
@@ -69,8 +80,11 @@ return {
         ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
       },
       v = {
-        ["<C-j>"] = { "<cmd>:m .+1<cr>==", desc = "Move one line down" },
-        ["<C-k>"] = { "<cmd>:m .-2<cr>==", desc = "Move one line up" },
+        ["<C-j>"] = { ":m .+1<cr>", desc = "Move one line down" },
+        ["<C-k>"] = { ":m .-2<cr>", desc = "Move one line up" },
+
+        -- nvim-spectre keybindings:
+        ["<leader>sw"] = { '<esc><cmd>lua require("spectre").open_visual()<CR>', desc = "Search current word" },
       },
       i = {
         -- ["<jj>"] = ["<esc>"],

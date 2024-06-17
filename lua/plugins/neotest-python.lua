@@ -35,7 +35,15 @@ return {
         "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>",
         desc = "Run test class DAP",
       },
-      { "dS", "<cmd>lua require('neotest').summary.toggle()<cr>", desc = "Show test summary" },
+      -- { "dS", "<cmd>lua require('neotest').summary.toggle()<cr>", desc = "Show test summary" },
+      {
+        "dS",
+        function()
+          require("neotest").summary.toggle()
+          local win = vim.fn.bufwinid "Neotest Summary"
+          if win > -1 then vim.api.nvim_set_current_win(win) end
+        end,
+      },
     },
   },
 }

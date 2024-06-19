@@ -50,9 +50,6 @@ return {
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
 
-        ["<C-j>"] = { ":m .+1<cr>", desc = "Move one line down" },
-        ["<C-k>"] = { ":m .-2<cr>", desc = "Move one line up" },
-
         -- nvim-spectre keybindings:
         ["<leader>s"] = { '<cmd>lua require("spectre").toggle()<CR>', desc = "Toggle Spectre" },
         ["<leader>sw"] = {
@@ -80,9 +77,6 @@ return {
         ["<C-s>"] = { ":w!<cr>", desc = "Save File" }, -- change description but the same command
       },
       v = {
-        ["<C-j>"] = { ":m .+1<cr>", desc = "Move one line down" },
-        ["<C-k>"] = { ":m .-2<cr>", desc = "Move one line up" },
-
         -- nvim-spectre keybindings:
         ["<leader>sw"] = { '<esc><cmd>lua require("spectre").open_visual()<CR>', desc = "Search current word" },
       },
